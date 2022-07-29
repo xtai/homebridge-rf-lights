@@ -233,10 +233,14 @@ class Tao95LightAccessory {
   setBrightness(value) {
     const brightness = this.separateTao95Brightness(value);
     if (value > 0) {
-      if (brightness['main'] !== this.platform.state.tao95.fields.main_brightness) {
+      if (brightness['main'] === 0 && this.platform.state.tao95.fields.main_power) {
+        this.platform.addCommand(['tao95', '--part', 'main', '--off']);
+      } else if (brightness['main'] !== this.platform.state.tao95.fields.main_brightness) {
         this.platform.addCommand(['tao95', '--part', 'main', '--brightness', brightness['main'].toString()]);
       }
-      if (brightness['aux'] !== this.platform.state.tao95.fields.aux_brightness) {
+      if (brightness['aux'] === 0 && this.platform.state.tao95.fields.aux_power) {
+        this.platform.addCommand(['tao95', '--part', 'aux', '--off']);
+      } else if (brightness['aux'] !== this.platform.state.tao95.fields.aux_brightness) {
         this.platform.addCommand(['tao95', '--part', 'aux', '--brightness', brightness['aux'].toString()]);
       }
     }
