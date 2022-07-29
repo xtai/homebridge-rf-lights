@@ -243,7 +243,9 @@ class Tao95LightAccessory {
   }
   getBrightness() {
     return this.mergeTao95Brightness(
+      this.platform.state.tao95.fields.main_power,
       this.platform.state.tao95.fields.main_brightness,
+      this.platform.state.tao95.fields.aux_power,
       this.platform.state.tao95.fields.aux_brightness
     );
   }
@@ -266,7 +268,13 @@ class Tao95LightAccessory {
       )
     );
   }
-  mergeTao95Brightness(main, aux) {
+  mergeTao95Brightness(main_power, main, aux_power, aux) {
+    if (!main_power) {
+      main = 0;
+    }
+    if (!aux_power) {
+      aux = 0;
+    }
     return parseInt(main / 25) * 20 + parseInt(aux / 25) * 5;
   }
   separateTao95Brightness(value) {
