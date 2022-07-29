@@ -471,7 +471,7 @@ class TxoneLightAccessory {
     }
   }
   getBrightness() {
-    return parseInt(this.platform.state.txone.fields.brightness);
+    return parseInt((this.platform.state.txone.fields.brightness + 5) / 10) * 10;
   }
   setColorTemp(value) {
     if (
