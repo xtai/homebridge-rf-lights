@@ -1,23 +1,18 @@
 # homebridge-rf-lights ![npm](https://img.shields.io/npm/v/homebridge-rf-lights?style=flat-square)
 
-A hacky homebridge plugin that controls rf lights and store light states in influxDB via [yet another hacky python script](https://github.com/xtai/py-rf-lights).
+This Homebridge plug-in transforms standard remote-controlled lights to smart lights with [Python scripts](https://github.com/xtai/py-rf-lights).
 
-## Before Start
+![cover](./assets/homebridge-rf-lights.png)
 
-You will need to get the raw button code via this [tutorial](https://www.instructables.com/Super-Simple-Raspberry-Pi-433MHz-Home-Automation/) by [george7378](gkristiansen.co.uk) and update them in the script.
+## Features
 
-## TaoTronics LED Floor Lamp 95
+- Add multiple lights.
+- Control light brightness.
+- Individually control different parts of a single light.
+- A set of virtual toggles in the Home App to replicate the remote control.
 
-https://www.taotronics.com/products/tt-dl095-led-floor-lamp
+## Usage
 
-Remote control [FCCID](https://www.fcc.gov/oet/ea/fccid): 2AVUHTT-DL095
+This [example Homebridge configuration](https://github.com/xtai/homebridge-rf-lights/blob/main/example-config.json) file includes three lights.
 
-## Txone Floor Lamp
-
-https://www.amazon.com/Modern-Standing-Contemporary-Bedrooms-Control/dp/B08M95NB7B
-
-## Thanks
-
-- https://github.com/milaq/rpi-rf
-- https://github.com/Sunoo/homebridge-rpi-rf-switch
-- https://www.instructables.com/Super-Simple-Raspberry-Pi-433MHz-Home-Automation/
+Check [the py-rf-lights repository](https://github.com/xtai/py-rf-lights) for more usage information.

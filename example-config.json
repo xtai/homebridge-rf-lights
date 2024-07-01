@@ -1,0 +1,96 @@
+{
+  "platforms": [
+    {
+      "platform": "RFLights",
+      "name": "RFLights",
+      "scriptDir": "/path/to/py-rf-lights/",
+      "devices": [
+        {
+          "deviceId": "DEVICE001",
+          "deviceName": "tao",
+          "deviceLabel": "Tao",
+          "parts": [
+            {
+              "partName": "top"
+            },
+            {
+              "partName": "down"
+            }
+          ],
+          "remote": [
+            {
+              "buttonName": "Power",
+              "buttonID": "a"
+            },
+            {
+              "buttonName": "Top Brightness",
+              "buttonID": "b"
+            },
+            {
+              "buttonName": "Top Color",
+              "buttonID": "c"
+            },
+            {
+              "buttonName": "Down Brightness",
+              "buttonID": "d"
+            },
+            {
+              "buttonName": "Down Color",
+              "buttonID": "e"
+            }
+          ]
+        },
+        {
+          "deviceId": "DEVICE002",
+          "deviceName": "tx",
+          "deviceLabel": "Tx",
+          "remote": [
+            {
+              "buttonName": "Power On",
+              "buttonID": "a"
+            },
+            {
+              "buttonName": "Power Off",
+              "buttonID": "b"
+            },
+            {
+              "buttonName": "Brightness +",
+              "buttonID": "c"
+            },
+            {
+              "buttonName": "Brightness -",
+              "buttonID": "d"
+            },
+            {
+              "buttonName": "Warm Color",
+              "buttonID": "e"
+            }
+          ]
+        },
+        {
+          "deviceId": "DEVICE003",
+          "deviceName": "hana",
+          "deviceLabel": "Hana",
+          "remote": [
+            {
+              "buttonName": "Power",
+              "buttonID": "a"
+            },
+            {
+              "buttonName": "Cycle Color",
+              "buttonID": "b"
+            },
+            {
+              "buttonName": "Brightness +",
+              "buttonID": "c"
+            },
+            {
+              "buttonName": "Brightness -",
+              "buttonID": "d"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,24 +1,12 @@
 {
+  "private": true,
+  "displayName": "Homebridge Rf Lights",
   "name": "homebridge-rf-lights",
-  "version": "0.0.1",
-  "description": "A hacky homebridge plugin that controls rf lights and store light states in influxDB via yet another hacky python script.",
+  "version": "1.0.0",
+  "description": "A Homebridge plug-in to control RF lights with python scripts.",
   "license": "MIT",
-  "keywords": [
-    "homebridge-plugin",
-    "homebridge",
-    "rf-lights",
-    "remote-control",
-    "433HMz",
-    "influx",
-    "taotronics",
-    "txone",
-    "floor-lamp"
-  ],
-  "engines": {
-    "node": ">=14.18.1",
-    "homebridge": ">=1.5.0"
-  },
   "author": "Sean Tai (https://github.com/xtai)",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/xtai/homebridge-rf-lights.git"
@@ -27,5 +15,34 @@
     "url": "https://github.com/xtai/homebridge-rf-lights/issues"
   },
   "homepage": "https://github.com/xtai/homebridge-rf-lights#readme",
-  "main": "index.js"
+  "engines": {
+    "node": "^18.17.0 || ^20.9.0",
+    "homebridge": "^1.8.0"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint src/**/*.ts --max-warnings=0",
+    "watch": "npm run build && npm link && nodemon",
+    "build": "rimraf ./dist && tsc",
+    "prepublishOnly": "npm run lint && npm run build"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "homebridge",
+    "rf-lights",
+    "remote-control",
+    "433HMz",
+    "floor-lamp"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.12.13",
+    "@typescript-eslint/eslint-plugin": "^7.11.0",
+    "@typescript-eslint/parser": "^7.11.0",
+    "eslint": "^8.57.0",
+    "homebridge": "^1.8.2",
+    "nodemon": "^3.1.2",
+    "rimraf": "^5.0.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
 }
